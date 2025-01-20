@@ -7,7 +7,17 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="chat-container">
+    <!-- Signup Form -->
+    <div id="signup-container" class="signup-container">
+        <h2>Enter Your Name</h2>
+        <form id="signup-form">
+            <input type="text" id="username" placeholder="Your Name" required>
+            <button type="submit">Join Chat</button>
+        </form>
+    </div>
+
+    <!-- Chat Container (hidden until user signs up) -->
+    <div class="chat-container" id="chat-container" style="display: none;">
         <div class="messages" id="messages"></div>
         <form id="chat-form">
             <input type="text" id="message-input" placeholder="Type a message..." autocomplete="off" required>

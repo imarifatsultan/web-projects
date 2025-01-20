@@ -9,18 +9,27 @@ const io = socketIo(server);
 // Serve static files (HTML, CSS, JS)
 app.use(express.static('public'));
 
+let users = {}; // Store usernames with their socket IDs
+
 // When a user connects
 io.on('connection', (socket) => {
     console.log('A user connected');
+    
+    // Listen for the 'set username' event
+    socket.on('set username', (username) => {
+        users[socket.id] = username;  // Save the username with the socket ID
+        console.log(`${username} has joined the chat`);
+    });
 
     // Listen for incoming messages and broadcast them
-    socket.on('chat message', (msg) => {
-        io.emit('chat message', msg);  // Send message to all clients
+    socket.on('chat message', (data) => {
+        io.emit('chat message', data);  // Send message with username to all clients
     });
 
     // When the user disconnects
     socket.on('disconnect', () => {
-        console.log('A user disconnected');
+        console.log(`${users[socket.id]} disconnected`);
+        delete users[socket.id]; // Remove the user from the list when they disconnect
     });
 });
 
