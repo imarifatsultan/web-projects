@@ -48,3 +48,13 @@ socket.on('chat message', (data) => {
     // Scroll to the bottom to show the latest message
     messages.scrollTop = messages.scrollHeight;
 });
+
+socket.on('update users', (users) => {
+    const userList = document.getElementById('users');
+    userList.innerHTML = '';
+    Object.values(users).forEach((username) => {
+        const userElement = document.createElement('li');
+        userElement.textContent = username;
+        userList.appendChild(userElement);
+    });
+});
