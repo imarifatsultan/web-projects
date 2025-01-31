@@ -38,3 +38,15 @@ const PORT = process.env.PORT || 3000;
 server.listen(PORT, () => {
     console.log(`Server running at http://localhost:${PORT}`);
 });
+
+io.on('connection', (socket) => {
+    socket.on('set username', (username) => {
+        users[socket.id] = username;
+        io.emit('update users', users);
+    });
+
+    socket.on('disconnect', () => {
+        delete users[socket.id];
+        io.emit('update users', users);
+    });
+});
