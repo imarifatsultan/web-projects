@@ -1,5 +1,5 @@
 // this is web app is simple demonstration of of how API's work
-const apiKey = "9ef0ab4af56de880182d04b8f340d976"; 
+const apiKey = "API_KEY"; // Key is removed for security reasons
 
 async function getWeather() {
     const city = document.getElementById("city").value;
