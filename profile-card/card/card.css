@@ -1,0 +1,78 @@
+body {
+      background-color: #00ecfd42;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .card {
+      background: white;
+      width: 320px;
+      border-radius: 15px;
+      box-shadow: 10px 10px 50px black;
+      overflow: hidden;
+      padding: 20px;
+      text-align: left;
+    }
+
+    .card img {
+      box-shadow: 2px 2px 30px black;
+      width: 100%;
+      outline-offset: 5px;
+      border-radius: 12px;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .tags {
+      margin: 15px 0 10px;
+      
+    }
+
+    .tag:hover{
+      background-color: #0063f7;
+      color: white;
+    }
+
+    .tag {
+  
+      display: inline-block;
+      background-color: #e3edf9;
+      color: #3b82f6;
+      padding: 5px 10px;
+      border-radius: 999px;
+      font-size: 12px;
+      margin-right: 8px;
+      font-weight: 500;
+    }
+
+    .card h2 {
+      margin: 10px 0;
+      font-size: 22px;
+      color: black;
+    }
+
+    .card p {
+      color: #6b7280;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 20px;
+      background-color: #e0ecfd;
+      color: #2563eb;
+      padding: 10px 20px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background 0.3s;
+    }
+
+    .btn:hover {
+      background-color: #0063f7;
+      color: white;
+    }
